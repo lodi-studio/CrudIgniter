@@ -1,0 +1,143 @@
+****************************
+CrudIgniter v1.0
+****************************
+
+Requirements
+-Mysql connector 6.9.9
+-.net 4 or higher
+
+[FUNCTION AND METHODS]
+-GetData()
+	get the data using mysql query and return it as datatable
+-Select()
+	get data using query using tablename
+
+-ExecuteQuery()
+	you can execute any command using this method
+	you can use either INSERT, UPDATE or DELETE
+
+-Insert()
+	use this to insert data to database
+
+-Update()
+	use this to update data to database
+
+-Delete()
+	use this to delete data to database
+
+-ToMysqlDbType()
+	-converts System.Type to MysqlDbTypes
+
+[HOW TO]
+-add reference "CrudIgniter.dll"
+-Import namespace
+
+	C#
+	using CrudIgniter.Helper;
+	
+	Vb
+	Imports CrudIgniter.Helper
+
+-Create new instance of CRUD
+
+	C#
+	CRUD crud as new CRUD("connectionstring");
+	
+	Vb
+	Dim crud as new CRUD("connectionstring")
+	
+-You can now use the CRUD functions and methods.
+
+
+[examples]
+
+--------------------
+SELECT AND GETDATA
+--------------------
+
+Vb.net
+'let say you already have datagridview control in your form.
+
+Dim crud As New CRUD("you connectionstring here..")
+
+DataGridview1.DataSource = crud.Select("table")
+or
+DataGridview1.DataSource = crud.Select("table", {"col1", "col2", "col3"})
+
+or using GetData
+
+DataGridview1.DataSource = crud.GetData("SELECT * FROM table")
+or
+DataGridview1.DataSource = crud.GetData("SELECT * FROM table WHERE ID=?", {1})
+
+------------------------
+EXECUTEQUERY)
+------------------------
+
+Vb.Net
+
+****************************************
+Insert data using ExecuteQuery() method
+*****************************************
+
+Dim sql As String= "INSERT INTO table(col1, col2) VALUES(?,?)";
+
+Dim parameters As Object() = {"val1", val2}
+
+crud.ExecuteQuery(sql, parameters)
+
+****************************************
+Update data using ExecuteQuery() method
+****************************************
+
+Dim sql As String = "Update table SET col1=?, col2=? WHERE col3=?"
+
+Dim parameters As Object() = {"val1", val2, val3}
+
+crud.ExecuteQuery(sql, parameters)
+
+*****************************************
+'Delete data using ExecuteQuery() method 
+*****************************************
+
+Dim sql As String = "DELETE FROM table WHERE col1=?"
+
+Dim parameter As Object() = {1}
+
+crud.ExecuteQuery(sql, parameter)
+
+-----------
+INSERT
+-----------
+Vb.Net
+
+crud.Table = "table"
+crud.Columns = {"col1", "col2", "col3"}
+crud.Values = {val1, val2, val3}
+crud.Insert()
+
+-----------
+UPDATE
+-----------
+Vb.net
+
+crud.Table = "table"
+crud.Columns = {"col1", "col2", "col3"}
+crud.Values = {val1, val2, val3}
+crud.Where= {"col"}
+crud.WhereValues = {1}
+crud.Update()
+
+-----------
+DELETE
+-----------
+Vb.Net
+
+crud.Table = "table"
+crud.Where= {"col"}
+crud.WhereValues = {1}
+crud.Delete()
+
+
+
+
