@@ -85,6 +85,7 @@ namespace DAL
     crud.Insert();
   }
   
+  // Update employee record
   public void Update(Models.Employee employeeModel)
   {
     crud.Table = "employee";
@@ -95,6 +96,7 @@ namespace DAL
     crud.Update();
   }
   
+  // Delete employee record
   public void Delete(int id)
   {
     crud.Table = "employee";
