@@ -30,7 +30,7 @@ CREATE TABLE  `employee` (
   `Address` varchar(45) NOT NULL,
   `Email` varchar(45) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 ```
 
 ### C# Example
