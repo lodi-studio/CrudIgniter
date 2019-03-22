@@ -106,4 +106,54 @@ namespace DAL
   }
 }
 ```
+#### Business Logic Layer
+```C#
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using CrudIgniter.Helper;
+
+namespace BLL
+{
+  private DAL.Employee employeeDAL = new DAL.Employee();
+  
+  // convert datatable to list of object 'Employee'
+  public List<Models.Employee> GetAllEmployee() 
+  {
+    return employeeDAL.GetAllEmployee().ToList<Models.Employee>();
+  }
+  
+  // convert datarow to object
+  public Models.Employee GetEmployeeById(int id)
+  {
+    Models.Employee employeeModel = new Models.Employee();
+    
+    foreach (DataRow row in employeeDAL.GetEmployeeById(id).Rows)
+    {
+      employeeModel = row.ToObject<Models.Employee>();
+    }
+    
+    return employeeModel;
+  }
+  
+  public void Create(Models.Employee employeeModel)
+  {
+    // you can add validation here
+  
+    employeeDAL.Create(employeeModel);
+  }
+  
+  public void Update(Models.Employee employeeModel)
+  {
+    // you can add validation here
+    
+    employeeDAL.Update(employeeModel);
+  }
+  
+  public void Delete(int id)
+  {
+    employeeDAL.Delete(id);
+  }
+}
+```
 
