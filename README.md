@@ -118,13 +118,13 @@ namespace BLL
 {
   private DAL.Employee employeeDAL = new DAL.Employee();
   
-  // convert datatable to list of object 'Employee'
+  // Convert datatable to list of object 'Employee'
   public List<Models.Employee> GetAllEmployee() 
   {
     return employeeDAL.GetAllEmployee().ToList<Models.Employee>();
   }
   
-  // convert datarow to object
+  // Convert datarow to object
   public Models.Employee GetEmployeeById(int id)
   {
     Models.Employee employeeModel = new Models.Employee();
@@ -139,14 +139,14 @@ namespace BLL
   
   public void Create(Models.Employee employeeModel)
   {
-    // you can add validation here
+    // You can add validation here
   
     employeeDAL.Create(employeeModel);
   }
   
   public void Update(Models.Employee employeeModel)
   {
-    // you can add validation here
+    // You can add validation here
     
     employeeDAL.Update(employeeModel);
   }
