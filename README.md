@@ -2,7 +2,7 @@
 CRUDIgniter helps developer to create a less CRUD operations using MySql database, it is very easy to use and makes your code more readable also lessen the codes in your Data Access Layer
 
 ## Dependencies 
-> MySql Connector .Net 6.9.9  https://downloads.mysql.com/archives/get/file/mysql-connector-net-6.9.9.msi
+> MySql Connector .Net 6.9.9/MySql.Data  https://downloads.mysql.com/archives/get/file/mysql-connector-net-6.9.9.msi
 
 ## Example
 
