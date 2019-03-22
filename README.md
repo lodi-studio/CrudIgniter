@@ -184,7 +184,6 @@ namespace MyApp
                 Console.WriteLine("Name: " + employeeModel.Name);
                 Console.WriteLine("Address: " + employeeModel.Address);
                 Console.WriteLine("Email: " + employeeModel.Email);
-                Console.WriteLine("Status: " + (employeeModel.Active > 0 ? "Active" : "InActive"));
                 Console.WriteLine("___________________________________\n");
             }
 
