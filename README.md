@@ -4,6 +4,22 @@ CRUDIgniter helps developer to create a less CRUD operations using MySql databas
 ## Dependencies 
 > MySql Connector .Net 6.9.9/MySql.Data  https://downloads.mysql.com/archives/get/file/mysql-connector-net-6.9.9.msi
 
+## Installation
+### Via NuGet Package Manager (Console)
+>1. Create new project.
+>2. Save project.
+>3. Go to Tools->Nuget Package Manager->Package Manager Console.
+>4. Enter the command: *Install-Package CrudIgniter* then press enter.
+>5. It will install the latest version and your done.
+
+### Via NuGet Package Manager (GUI)
+>1. Create new project.
+>2. Save project.
+>3. Go to Tools->NuGet Package Manager->Manage NuGet Packager for Solution...
+>4. Search for *CrudIgniter* then click *Install*
+>5. If you see green check on beside the package then you successfully installed it.
+>6. It will install the latest version and your done.
+
 ## Example
 
 ### Table
