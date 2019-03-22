@@ -2,3 +2,4 @@ D:\Experiment\CSharp\CrudIgniter\CrudIgniter\bin\Debug\CrudIgniter.dll
 D:\Experiment\CSharp\CrudIgniter\CrudIgniter\bin\Debug\CrudIgniter.pdb
 D:\Experiment\CSharp\CrudIgniter\CrudIgniter\obj\Debug\CrudIgniter.dll
 D:\Experiment\CSharp\CrudIgniter\CrudIgniter\obj\Debug\CrudIgniter.pdb
+D:\Experiment\CSharp\CrudIgniter\CrudIgniter\bin\Debug\MySql.Data.dll
