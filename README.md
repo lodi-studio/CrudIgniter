@@ -6,7 +6,7 @@ CRUDIgniter helps developer to create a less CRUD operations using MySql databas
 
 ## Example
 
-###### Table
+### Table
 ```MySql
 CREATE TABLE  `employee` (
   `Id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -17,10 +17,11 @@ CREATE TABLE  `employee` (
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 ```
 
-###### C# Example
+### C# Example
 
+#### Model
 ```C#
-namespace Model 
+namespace Models 
 {
   public class Employee 
   {
@@ -45,10 +46,62 @@ namespace Model
     #region Property
     public int Id { get;set; }
     public string Name { get;set; }
-    public string Address { get;set }
+    public string Address { get;set; }
     public string Email { get;set; }
     #endregion
   }
 }
-
 ```
+
+#### Data Access Layer
+```C#
+using System.Data;
+using CrudIgniter.Helper;
+
+namespace DAL 
+{
+  private CRUD crud = new CRUD("change your connection string here..");
+  
+  // Get all employee
+  public DataTable GetAllEmployee()
+  {
+    return crud.Select("employee");
+  }
+  
+  // Get employee using id
+  public DataTable GetEmployeeById(int id)
+  {
+    string sql = "SELECT * FROM employee WHERE Id=?";
+    
+    return crud.GetData(sql, new object[] {id});
+  }
+  
+  // Insert employee record
+  public void Create(Models.Employee employeeModel)
+  {
+    crud.Table = "employee";
+    crud.Columns = new string[] { "Name", "Address", "Email" };
+    crud.Values = new object[] { employeeModel.Name, employeeModel.Address, employeeModel.Email };
+    crud.Insert();
+  }
+  
+  public void Update(Models.Employee employeeModel)
+  {
+    crud.Table = "employee";
+    crud.Columns = new string[] { "Name", "Address", "Email" };
+    crud.Values = new object[] { employeeModel.Name, employeeModel.Address, employeeModel.Email };
+    crud.Where = new string[] { "Id" };
+    crud.Where = new object[] { employeeModel.Id };
+    crud.Update();
+  }
+  
+  public void Delete(int id)
+  {
+    crud.Table = "employee";
+    crud.Where = new string[] { "Id" };
+    crud.Where = new object[] { id};
+    crud.Delete();
+  }
+}
+```
+
