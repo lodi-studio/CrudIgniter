@@ -17,7 +17,7 @@ CRUDIgniter helps developer to create a less CRUD operations using MySql databas
 >2. Save project.
 >3. Go to Tools->NuGet Package Manager->Manage NuGet Packager for Solution...
 >4. Search for *CrudIgniter* then click *Install*
->5. If you see green check on beside the package then you successfully installed it.
+>5. If you see green check beside the package then you successfully installed it.
 >6. It will install the latest version and your done.
 
 ## Example
